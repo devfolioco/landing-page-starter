@@ -1,21 +1,26 @@
 {
-    "title": "",
-    "name": "",
-    "version": "",
-    "description": "",
+    "name": "devfolio-landing-page-starter",
+    "version": "0.0.0",
+    "description": "Devfolio starter for landing pages",
+    "scripts": {
+        "build": "gulp build",
+        "dev": "gulp"
+      },
     "keywords": [
-        ""
+        "landing",
+        "landing-page",
+        "homepage",
+        "devfolio"
     ],
     "homepage": "",
     "bugs": {
-        "url": "",
-        "email": ""
+        "url": "https://github.com/devfolioco/landing-page-starter/issues"
     },
     "license": "MIT",
-    "author": "",
+    "author": "Ajay NS <ajay.ns@outlook.com>",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/devfolioco/landing-page-starter"
     },
     "devDependencies": {
         "browser-sync": "2.23.6",
