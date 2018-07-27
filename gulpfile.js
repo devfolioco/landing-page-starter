@@ -3,6 +3,9 @@ var sass = require("gulp-sass");
 var cleanCSS = require("gulp-clean-css");
 var rename = require("gulp-rename");
 var uglify = require("gulp-uglify");
+var imagemin = require('gulp-imagemin');
+// plugin for lossy jpg compression
+var imageminMozjpeg = require('imagemin-mozjpeg'); 
 var browserSync = require("browser-sync").create();
 
 // Compile SCSS
@@ -54,15 +57,26 @@ gulp.task("js:minify", function() {
 gulp.task("js", ["js:minify"]);
 
 // Task to copy files and assets
+
+// Optimize images
 gulp.task('copy:images', function () {
   return gulp
     .src('./src/img/**/*')
+    .pipe(imagemin([
+      imageminMozjpeg({
+        quality: 90
+      }),
+      imagemin.gifsicle(),
+      imagemin.optipng(),
+      imagemin.svgo()
+    ]))
     .pipe(gulp.dest('./public/img'))
 })
 
 gulp.task('copy:favicons', function () {
   return gulp
     .src('./src/favicons/*')
+    .pipe(imagemin())
     .pipe(gulp.dest('./public/favicons'))
 })
 
