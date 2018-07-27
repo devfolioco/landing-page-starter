@@ -1,6 +1,7 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var cleanCSS = require("gulp-clean-css");
+var autoprefixer = require("gulp-autoprefixer");
 var rename = require("gulp-rename");
 var uglify = require("gulp-uglify");
 var imagemin = require('gulp-imagemin');
@@ -19,13 +20,9 @@ gulp.task("css:compile", function() {
         })
         .on("error", sass.logError)
     )
-    .pipe(gulp.dest("./public/css"));
-});
-
-// Minify CSS
-gulp.task("css:minify", ["css:compile"], function() {
-  return gulp
-    .src(["./public/css/*.css", "!./public/css/*.min.css"])
+    .pipe(autoprefixer({
+      browsers: ['last 4 versions']
+    }))
     .pipe(cleanCSS())
     .pipe(
       rename({
@@ -37,7 +34,7 @@ gulp.task("css:minify", ["css:compile"], function() {
 });
 
 // CSS
-gulp.task("css", ["css:compile", "css:minify"]);
+gulp.task("css", ["css:compile"]);
 
 // Minify JavaScript
 gulp.task("js:minify", function() {
@@ -90,7 +87,7 @@ gulp.task('copy:files', function () {
 gulp.task("copy", ["copy:images", "copy:favicons", "copy:files"]);
 
 // Configure the browserSync task
-gulp.task("browserSync", function() {
+gulp.task("browserSync", ["build"], function() {
   browserSync.init({
     server: {
       baseDir: "./public"
