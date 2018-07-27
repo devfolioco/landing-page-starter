@@ -75,9 +75,6 @@ gulp.task('copy:files', function () {
 // Files
 gulp.task("copy", ["copy:images", "copy:favicons", "copy:files"]);
 
-// Default task
-gulp.task("default", ["css", "js", "copy"]);
-
 // Configure the browserSync task
 gulp.task("browserSync", function() {
   browserSync.init({
@@ -87,9 +84,13 @@ gulp.task("browserSync", function() {
   });
 });
 
+// Build task
+gulp.task("build", ["css", "js", "copy"]);
+
 // Dev task
-gulp.task("dev", ["css", "js", "copy", "browserSync"], function() {
+gulp.task("default", ["build", "browserSync"], function() {
   gulp.watch("./src/scss/*.scss", ["css"]);
   gulp.watch("./src/js/*.js", ["js"]);
   gulp.watch("./src/**/*.html", browserSync.reload);
 });
+
