@@ -5,9 +5,11 @@ var autoprefixer = require("gulp-autoprefixer");
 var rename = require("gulp-rename");
 var uglify = require("gulp-uglify");
 var imagemin = require('gulp-imagemin');
+var htmlmin = require('gulp-htmlmin');
+var browserSync = require("browser-sync").create();
+
 // plugin for lossy jpg compression
 var imageminMozjpeg = require('imagemin-mozjpeg'); 
-var browserSync = require("browser-sync").create();
 
 // Compile SCSS
 gulp.task("css:compile", function() {
@@ -79,12 +81,21 @@ gulp.task('copy:favicons', function () {
 
 gulp.task('copy:files', function () {
   return gulp
-    .src(['./src/*.*', './src/*/*.html', './src/*/*.min.css', './src/*/*.min.js'])
+    .src(['./src/*.*', './src/*/*.min.css', './src/*/*.min.js', '!./src/**/*.html'])
     .pipe(gulp.dest('./public/'))
 })
 
 // Files
 gulp.task("copy", ["copy:images", "copy:favicons", "copy:files"]);
+
+gulp.task('html:minify', function() {
+  return gulp
+    .src('./src/**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./public/'))
+})
+
+gulp.task("html", ["html:minify"]);
 
 // Configure the browserSync task
 gulp.task("browserSync", ["build"], function() {
@@ -96,7 +107,7 @@ gulp.task("browserSync", ["build"], function() {
 });
 
 // Build task
-gulp.task("build", ["css", "js", "copy"]);
+gulp.task("build", ["css", "js", "copy", "html"]);
 
 // Dev task
 gulp.task("default", ["build", "browserSync"], function() {
