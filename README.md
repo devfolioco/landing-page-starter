@@ -1,11 +1,17 @@
+# devfolio-landing-page-starter
+
+Kickstart landing page development with this starter which includes SASS preprocessing, image optimization, minification and hot reloading with BrowserSync.
+
 ## Installation
-- `npm install`
 
-#### Gulp Tasks
+Install the dependencies:
 
-- `gulp` the default task that builds everything
-- `gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp sass` compiles SCSS files into CSS
-- `gulp minify-css` minifies the compiled CSS file
-- `gulp minify-js` minifies the themes JS file
-- `gulp copy` copies dependencies from node_modules to the vendor directory
+### `yarn install`
+
+Run the development server:
+
+### `yarn dev`
+
+Production build to `/public`:
+
+### `yarn build`
