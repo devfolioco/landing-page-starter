@@ -93,6 +93,7 @@ gulp.task('html:minify', function() {
     .src('./src/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./public/'))
+    .pipe(browserSync.stream());
 })
 
 gulp.task("html", ["html:minify"]);
@@ -113,6 +114,6 @@ gulp.task("build", ["css", "js", "copy", "html"]);
 gulp.task("default", ["build", "browserSync"], function() {
   gulp.watch("./src/scss/*.scss", ["css"]);
   gulp.watch("./src/js/*.js", ["js"]);
-  gulp.watch("./src/**/*.html", browserSync.reload);
+  gulp.watch("./src/**/*.html", ["html"]);
 });
 
