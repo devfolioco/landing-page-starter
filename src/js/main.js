@@ -32,15 +32,10 @@
     }
   });
 
-  // Show hide navbar bg color
-  // var navTransparentBg = $("#mainNav").css("background-color", "rgba(0, 0, 0, 0)");
-  // var navBgColor = $("#mainNav").css("background-color", "#363f47");
-
   // Closes responsive menu when a scroll trigger link is clicked
   $(".js-scroll-trigger").click(function() {
     if (window.innerWidth < "992") {
       $(".navbar-collapse").collapse("hide");
-      $("#mainNav").css("background-color", "#111C33");
     }
   });
 
