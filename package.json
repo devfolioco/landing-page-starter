@@ -1,37 +1,37 @@
 {
-    "name": "devfolio-landing-page-starter",
-    "version": "0.0.0",
-    "description": "Devfolio starter for landing pages",
-    "scripts": {
-        "build": "gulp build",
-        "dev": "gulp"
-      },
-    "keywords": [
-        "landing",
-        "landing-page",
-        "homepage",
-        "devfolio"
-    ],
-    "homepage": "",
-    "bugs": {
-        "url": "https://github.com/devfolioco/landing-page-starter/issues"
-    },
-    "license": "MIT",
-    "author": "Ajay NS <ajay.ns@outlook.com>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/devfolioco/landing-page-starter"
-    },
-    "devDependencies": {
-        "browser-sync": "2.23.6",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^5.0.0",
-        "gulp-clean-css": "3.9.2",
-        "gulp-htmlmin": "^4.0.0",
-        "gulp-imagemin": "^4.1.0",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^3.1.0",
-        "gulp-uglify": "3.0.0",
-        "imagemin-mozjpeg": "^7.0.0"
-    }
+  "name": "devfolio-landing-page-starter",
+  "version": "0.0.0",
+  "description": "Devfolio starter for landing pages",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp"
+  },
+  "keywords": [
+    "landing",
+    "landing-page",
+    "homepage",
+    "devfolio"
+  ],
+  "homepage": "https://github.com/devfolioco/landing-page-starter/",
+  "bugs": {
+    "url": "https://github.com/devfolioco/landing-page-starter/issues"
+  },
+  "license": "MIT",
+  "author": "Ajay NS <ajay.ns@outlook.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devfolioco/landing-page-starter"
+  },
+  "devDependencies": {
+    "browser-sync": "2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "3.9.2",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0",
+    "imagemin-mozjpeg": "^7.0.0"
+  }
 }
