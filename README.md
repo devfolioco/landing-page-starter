@@ -1,6 +1,15 @@
 # devfolio-landing-page-starter
 
-Kickstart landing page development with this starter which includes SASS preprocessing, image optimization, minification and hot reloading with BrowserSync.
+Kickstart landing page development
+
+## Features
+
+- SASS preprocessing
+- Image optimization
+- JS, CSS minification
+- Hot reloading with BrowserSync
+- Scrollspy for automatically updating links in nav
+- Smooth scrolling between sections
 
 ## Installation
 
