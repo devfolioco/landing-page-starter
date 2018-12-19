@@ -93,6 +93,7 @@ gulp.task("copy:files", function() {
     .src([
       "./src/*.*",
       "./src/*/*.woff",
+      "./src/*/*.otf",
       "./src/*/*.min.css",
       "./src/*/*.min.js",
       "!./src/**/*.html"
