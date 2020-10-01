@@ -3,10 +3,21 @@
   height: 80px;
   transition: 0.2s ease-in all;
 
+  .container {
+    height: 100%;
+  }
+
   .brand-title {
+    height: 100%;
     font-size: 18px;
     font-weight: bold;
     color: white;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 80%;
+    }
 
     span {
       margin-left: 16px;
@@ -25,6 +36,12 @@
   @media (min-width: 992px) {
     &.navbar-shrink {
       height: 48px;
+
+      .brand-title {
+        img {
+          height: 100%;
+        }
+      }
     }
   }
 
